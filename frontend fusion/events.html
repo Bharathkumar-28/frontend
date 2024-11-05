@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-bottom: 2px solid #ddd;
+            animation: headerAnimation 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Event Cards Section */
+        .event-list {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            gap: 20px;
+            animation: fadeIn 3s ease-out;
+        }
+
+        /* Event Card Styles */
+        .event-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: cardEntrance 1.5s ease-out;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            animation: fadeInImage 2s ease-in-out 0.5s;
+        }
+
+        .event-info h2 {
+            font-size: 1.8rem;
+            margin: 15px 0;
+            color: #333;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        .event-info p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+
+        .register-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 2s ease-in-out 2s;
+        }
+
+        .register-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Keyframe Animations */
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Card Entrance */
+        @keyframes cardEntrance {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Slide In from Left */
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Header Animation */
+        @keyframes headerAnimation {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Fade In Image Animation */
+        @keyframes fadeInImage {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Upcoming Events</h1>
+        <p>Join our exciting events, workshops, and challenges</p>
+    </header>
+
+    <section class="event-list">
+        <div class="event-card" id="challenge">
+            <img src="devs4.jpeg.jpg" alt="Challenge Event">
+            <div class="event-info">
+                <h2>Challenge Event</h2>
+                <p>Take part in our exciting challenge and win amazing prizes!</p>
+                <button class="register-btn">Register Now</button>
+            </div>
+        </div>
+        <div class="event-card" id="workshop">
+            <img src="dev2.jpeg.jpg" alt="Workshop on Web Development">
+            <div class="event-info">
+                <h2>Workshop on Web Development</h2>
+                <p>Join us for an informative workshop on modern web development practices.</p>
+                <button class="register-btn">Register Now</button>
+            </div>
+        </div>
+        <div class="event-card" id="hackathon">
+            <img src="devs3.jpeg.jpg" alt="Hackathon">
+            <div class="event-info">
+                <h2>Hackathon</h2>
+                <p>Collaborate with brilliant minds and solve real-world problems.</p>
+                <button class="register-btn">Register Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Event Organization. All rights reserved.</p>
+    </footer>
+</body>
+</html>

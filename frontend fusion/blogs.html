@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Club Blog</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: #fff;
+            line-height: 1.6;
+            height: 100vh;
+            overflow-x: hidden; /* Hide horizontal overflow */
+            position: relative;
+            background-color: #000;
+            background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+            background-size: 200% 200%;
+            animation: algaeGrow 5s ease-in-out infinite, flickerEffect 2s infinite alternate;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Growing Algae Animation */
+        @keyframes algaeGrow {
+            0% {
+                background-size: 100% 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            50% {
+                background-size: 300% 300%;
+                background-color: rgba(0, 255, 0, 0.6);
+            }
+            100% {
+                background-size: 100% 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        /* Flicker Effect for organic feel */
+        @keyframes flickerEffect {
+            0% {
+                background-color: rgba(0, 255, 0, 0.6);
+            }
+            50% {
+                background-color: rgba(0, 255, 0, 0.4);
+            }
+            100% {
+                background-color: rgba(0, 255, 0, 0.8);
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 150, 136, 0.8);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            animation: headerAnimation 1.5s ease-out;
+            border-bottom: 3px solid #fff;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+            width: 100%;
+        }
+
+        header:hover {
+            transform: scale(1.05);
+            color: rgba(0, 255, 0, 1); /* Green text on hover */
+        }
+
+        header h1 {
+            font-size: 3rem;
+            animation: slideInFromTop 1.5s ease-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-out 1s;
+        }
+
+        /* Main Content Styles */
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping of blog posts */
+            gap: 40px; /* Add space between blog posts */
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        .blog-post {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            animation: fadeIn 2s ease-in-out;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Hover Animations */
+        .blog-post:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            animation: pulseEffect 0.5s infinite alternate, rotateEffect 1s ease-in-out, colorChange 0.3s ease;
+            background-color: rgba(0, 255, 0, 0.1);
+            filter: brightness(1.1);
+        }
+
+        /* Pulse effect */
+        @keyframes pulseEffect {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Rotation effect */
+        @keyframes rotateEffect {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(3deg);
+            }
+        }
+
+        /* Color Change and Algae Effect */
+        @keyframes colorChange {
+            0% {
+                background-color: rgba(255, 255, 255, 1);
+            }
+            50% {
+                background-color: rgba(0, 255, 0, 0.4);
+            }
+            100% {
+                background-color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        /* Tilt effect on hover */
+        .blog-post:hover {
+            transform: perspective(500px) rotateX(5deg) rotateY(5deg);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .blog-post h2 {
+            font-size: 1.8rem;
+            margin: 20px;
+            color: #333;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        .blog-post p {
+            font-size: 1rem;
+            color: #555;
+            margin: 20px;
+            line-height: 1.8;
+        }
+
+        /* Keyframe Animations */
+        @keyframes headerAnimation {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease-out 2s;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .blog-post {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .blog-post h2 {
+                font-size: 1.6rem;
+            }
+
+            .blog-post p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to the Dev Club Blog</h1>
+        <p>Your guide to joining clubs, mastering skills, and succeeding in interviews</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Blog Post 1 - How to Join a Developer's Club -->
+        <div class="blog-post">
+            <img src="devs1.jpeg.jpg" alt="Join Dev Club">
+            <h2>How to Join a Developer's Club</h2>
+            <p>
+                Joining a Developer's Club is an excellent way to enhance your coding skills, collaborate with others, and stay up-to-date with the latest trends in technology. To get started, look for clubs in your university, online forums, or meetups. Follow the registration process, attend the introductory meetings, and get involved in projects to maximize your experience.
+            </p>
+        </div>
+
+        <!-- Blog Post 2 - How to Master a Skill -->
+        <div class="blog-post">
+            <img src="dev2.jpeg.jpg" alt="Mastering Skills">
+            <h2>How to Master a Skill</h2>
+            <p>
+                Mastering a technical skill requires dedication, time, and a structured approach. Start by breaking down the skill into smaller tasks. Dedicate consistent time for learning and practice. Use online resources like tutorials, videos, and documentation. Join communities, ask questions, and collaborate with peers to accelerate your progress.
+            </p>
+        </div>
+
+        <!-- Blog Post 3 - Acing Technical Interviews -->
+        <div class="blog-post">
+            <img src="devs3.jpeg.jpg" alt="Acing Technical Interviews">
+            <h2>How to Ace a Technical Interview</h2>
+            <p>
+                Preparing for a technical interview requires more than just theoretical knowledge. Focus on problem-solving skills, algorithmic thinking, and coding under pressure. Practice coding challenges on platforms like LeetCode, HackerRank, and Codewars. Don’t forget to practice explaining your thought process clearly and concisely during mock interviews.
+            </p>
+        </div>
+
+        <!-- Blog Post 4 - Building a Strong Portfolio -->
+        <div class="blog-post">
+            <img src="devs4.jpeg.jpg" alt="Building Portfolio">
+            <h2>Building a Strong Portfolio</h2>
+            <p>
+                A well-organized portfolio showcases your skills, projects, and achievements. Include detailed case studies of projects you've worked on, along with links to GitHub repositories and deployed applications. Keep the design clean and easy to navigate, and always update it with your latest work to stay relevant to potential employers.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Dev Club Blog | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

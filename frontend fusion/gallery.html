@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - Students and Teachers Meeting</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-bottom: 2px solid #ddd;
+            animation: headerAnimation 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            animation: galleryEntrance 3s ease-out;
+        }
+
+        /* Gallery Image Style */
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            background-color: #e0f7fa; /* Light cyan background on hover */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease, transform 0.5s ease;
+            border-radius: 20px;
+        }
+
+        .gallery-item:hover img {
+            opacity: 0.85;
+            transform: rotate(-5deg); /* Slight rotation on hover */
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Keyframe Animations */
+        @keyframes headerAnimation {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Gallery Entrance */
+        @keyframes galleryEntrance {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Background Color Change on Hover */
+        @keyframes colorChange {
+            0% {
+                background-color: #4CAF50;
+            }
+            100% {
+                background-color: #ffeb3b;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Students & Teachers Meeting</h1>
+        <p>Experience collaborative moments between students and teachers</p>
+    </header>
+
+    <section class="gallery">
+        <!-- Gallery Items -->
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400/FF5733/FFFFFF?text=Student+Teacher+1" alt="Student Teacher 1">
+            <div class="overlay">
+                <span class="overlay-text">Discussion</span>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400/33B5FF/FFFFFF?text=Student+Teacher+2" alt="Student Teacher 2">
+            <div class="overlay">
+                <span class="overlay-text">Teaching Moment</span>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400/FF9800/FFFFFF?text=Student+Teacher+3" alt="Student Teacher 3">
+            <div class="overlay">
+                <span class="overlay-text">Learning Together</span>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400/4CAF50/FFFFFF?text=Student+Teacher+4" alt="Student Teacher 4">
+            <div class="overlay">
+                <span class="overlay-text">Collaborating</span>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400/9C27B0/FFFFFF?text=Student+Teacher+5" alt="Student Teacher 5">
+            <div class="overlay">
+                <span class="overlay-text">Teaching & Learning</span>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/600x400/00BCD4/FFFFFF?text=Student+Teacher+6" alt="Student Teacher 6">
+            <div class="overlay">
+                <span class="overlay-text">Mentoring</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Students & Teachers Gallery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
